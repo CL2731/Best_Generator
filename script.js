@@ -54,5 +54,6 @@ function paslenth (userinput){
     alert("Invalid input.");
   }
   console.log(userinput)
-  password = (Math.floor(Math.random()*(paslenth + getusin)))
+  password = (Math.floor(Math.random(getusin)*(userinput)))
 }
+
