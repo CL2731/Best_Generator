@@ -4,16 +4,16 @@ var generateBtn = document.querySelector("#generate");
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var let1 = ["A", "B", ];
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-console.log(let1)
+console.log(let1);
 var special = ["!", "$", "&", "+"];
-var ranchar = [];
-
+var ranchar = "";
+var userinput = 0;
 // Write password to the #password input
 function writePassword() {
-  //var password = generatePassword();
- // var passwordText = document.querySelector("#password");
+ var passwordText = document.querySelector("#password");
   paslenth();
-  //passwordText.value = password;
+  ranchar
+  passwordText.value = password;
 }
 
 // Add event listener to generate button
@@ -29,24 +29,24 @@ function getusin (){
       alert("Must choose at least one.")
     } else {
       if (lower === true){
-        ranchar.push(letters)
+        ranchar= ranchar.concat(letters)
         console.log(ranchar)
       } 
       if (upper === true){
-        ranchar.push(let1)
+        ranchar= ranchar.concat(let1)
       }
       if (bers === true){
-        ranchar.push(numbers)
+        ranchar= ranchar.concat(numbers)
       }
       if (spec === true){
-        ranchar.push(special)
+        ranchar= ranchar.concat(special)
       } 
       console.log(ranchar)
-    }
+    } console.log(userinput)
 }
 
 function paslenth (){
-  var userinput = prompt("How many characters would you like your password to be?\nMust be at least 8 and no more than 128.")
+  userinput = prompt("How many characters would you like your password to be?\nMust be at least 8 and no more than 128.")
   if (userinput > 7 && userinput < 129) {
     getusin();
   } else if (userinput <= 7 || userinput >= 129) {
@@ -56,4 +56,4 @@ function paslenth (){
   }
 }
 
-
+var password = Math.floor(Math.random() * userinput)
